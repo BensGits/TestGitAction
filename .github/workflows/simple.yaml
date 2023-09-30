@@ -12,4 +12,4 @@ jobs:
       - name: multi string
         run:  |
           node -v
-          npm -vcl
+          npm -v
