@@ -15,13 +15,21 @@ provider "aws" {
 # }
 
 
-resource "aws_instance" "ec2_example" {
+# resource "aws_instance" "ec2_example" {
 
-    ami = "ami-0767046d1677be5a0" 
+#     ami = "ami-0767046d1677be5a0" 
 
-    instance_type = "t2.micro"
+#     instance_type = "t2.micro"
 
-    tags = {
-      Name = "EC2 Instance with remote state"
-    }
+#     tags = {
+#       Name = "EC2 Instance with remote state"
+#     }
+# }
+
+resource "aws_vpc" "test" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    name = "Action-test"
+  }
 }
