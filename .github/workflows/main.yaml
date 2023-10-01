@@ -17,12 +17,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkoutv3
-        with:
-          repository: BensGits/TestGitAction
-          ref: main
+        # with:
+        #   repository: BensGits/TestGitAction
+        #   ref: main
 
-      # - name: test
-      #   uses: ./.github/actions/workflows
+      - name: test
+        uses: group-05\cdl-08\.github\workflows
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
