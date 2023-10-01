@@ -15,13 +15,13 @@ jobs:
         with:
           terraform_version: 1.1.9
       - name: Terraform Init
-        uses: terraform init
+        run: terraform init
       - name: terraform format
-        uses: format
+        run: format
       - name: terraform validate
-        uses: validate
+        run: validate
       - name: terraform plan
-        uses: plan
+        run: plan
       #- name: Terraform Apply
       #  run: terraform apply #-auto-approve -input=false
       
