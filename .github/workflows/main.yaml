@@ -1,30 +1,30 @@
-# name: GitAction-Terraform-Workflow
+name: GitAction-Terraform-Workflow
 
-# on:
-#   push:
-#     branches:
-#       - main
-# env:
-#   AWS_ACCESS_KEY_ID: ${{ secret.ACCESS_KEY }}
-#   AWS_SECRET_ACCESS_KEY: ${{ secret.SECRET_KEY }}
+on:
+  push:
+    branches:
+      - main
+env:
+  AWS_ACCESS_KEY_ID: ${{ secret.ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secret.SECRET_KEY }}
 
-# jobs:
-#   terraform:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkoutv3
-#       - name: Setup Terraform
-#         uses: hashicorp/setup-terraform@v2
-#         with:
-#           terraform_version: 1.1.9
-#       - name: Terraform Init
-#         uses: terraform init
-#       - name: terraform format
-#         uses: format
-#       - name: terraform validate
-#         uses: validate
-#       - name: terraform plan
-#         uses: plan
-#       #- name: Terraform Apply
-#       #  run: terraform apply #-auto-approve -input=false
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkoutv3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.1.9
+      - name: Terraform Init
+        run: terraform init
+      - name: terraform format
+        run: format
+      - name: terraform validate
+        run: validate
+      - name: terraform plan
+        run: plan
+      #- name: Terraform Apply
+      #  run: terraform apply #-auto-approve -input=false
