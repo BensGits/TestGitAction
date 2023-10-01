@@ -19,7 +19,7 @@ jobs:
       #   uses: actions/checkoutv3
 
       - name: test
-        uses: ./.github/workflows/main.yaml
+        uses: ./.github/workflows/
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
