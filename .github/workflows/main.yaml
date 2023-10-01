@@ -22,7 +22,7 @@ jobs:
         #   ref: main
 
       - name: test
-        uses: .github/actions/build
+        uses: .github/workflows/main.yaml
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
