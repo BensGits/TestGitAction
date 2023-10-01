@@ -4,15 +4,15 @@ provider "aws" {
 #  shared_credentials_files = ["/Users/19734/.aws/credentials"]
 }
 
-# terraform {
-#     backend "s3" {
-#         bucket = "jhooq-terraform-s3-bucket"
-#         key    = "jhooq/terraform/remote/s3/terraform.tfstate"
-#         region     = "us-west-2"
-#         #access_key = ""
-#         #secret_key = ""
-#     }
-# }
+terraform {
+    backend "s3" {
+        bucket = "jhooq-terraform-s3-bucket"
+        key    = "jhooq/terraform/remote/s3/terraform.tfstate"
+        region     = "us-west-2"
+        AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+        AWS_SECRET_KEY_ID: ${{ secrets.SECRET_KEY }}
+    }
+}
 
 
 # resource "aws_instance" "ec2_example" {
@@ -26,10 +26,10 @@ provider "aws" {
 #     }
 # }
 
-resource "aws_vpc" "test" {
-  cidr_block = "10.0.0.0/16"
+# resource "aws_vpc" "test" {
+#   cidr_block = "10.0.0.0/16"
 
-  tags = {
-    name = "Action-test"
-  }
-}
+#   tags = {
+#     name = "Action-test"
+#   }
+# }
