@@ -21,10 +21,10 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: terraform format
-        run: format
+        run: terraform format
       - name: terraform validate
-        run: validate
+        run: terraform validate
       - name: terraform plan
-        run: plan
+        run: terraform plan
       #- name: Terraform Apply
       #  run: terraform apply #-auto-approve -input=false
