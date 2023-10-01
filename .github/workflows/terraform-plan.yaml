@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: ./.github/actions/terraform-plan@main
+        uses: BensGits/TestGitAction@main
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
