@@ -1,0 +1,39 @@
+name: GitAction-Terraform-Workflow
+
+on:
+  push:
+    branches:
+      - main
+env:
+  AWS_ACCESS_KEY_ID: ${{ secret.ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secret.SECRET_KEY }}
+
+jobs:
+  run-terraform-git-action:
+    name: Terraform
+    runs-on: ubuntu-latest
+    
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.9
+
+      - name: Terraform Init
+        uses: terraform init
+
+      - name: terraform format
+        uses: fmt
+
+      - name: terraform validate
+        uses: validate
+
+      - name: terraform plan
+        uses: plan
+
+      #- name: Terraform Apply
+      #  run: terraform apply #-auto-approve -input=false
