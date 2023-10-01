@@ -22,7 +22,7 @@ jobs:
         #   ref: main
 
       - name: test
-        uses: group-05/cdl-08/.github/workflows
+        uses: .github/actions/build
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
