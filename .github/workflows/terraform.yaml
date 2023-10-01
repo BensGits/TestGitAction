@@ -22,7 +22,7 @@ jobs:
       run: terraform validate
 
     - name: Terraform validate
-      run: terraform format
+      run: terraform fmt
 
     - name: Terraform Plan
       run: terraform plan #-input=false
