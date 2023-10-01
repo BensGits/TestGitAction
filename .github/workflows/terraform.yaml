@@ -19,13 +19,13 @@ jobs:
       run: terraform init
 
     - name: Terraform Format
-      run: validate
+      run: terraform validate
 
     - name: Terraform validate
-      run: format
+      run: terraform format
 
     - name: Terraform Plan
-      run: plan #-input=false
+      run: terraform plan #-input=false
 
     #- name: Terraform Apply
     #  run: terraform apply #-auto-approve -input=false
