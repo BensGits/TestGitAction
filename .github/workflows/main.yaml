@@ -9,17 +9,11 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secret.SECRET_KEY }}
 
 jobs:
-  run-terraform-git-action:
-    name: Terraform
+  terraform:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkoutv3
-        # with:
-        #   repository: BensGits/TestGitAction
-        #   ref: main
-      # - name: test
-      #   uses: .github/workflows/main.yaml
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
